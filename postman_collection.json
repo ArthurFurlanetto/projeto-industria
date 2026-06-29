@@ -1,0 +1,53 @@
+{
+  "info": {
+    "name": "Projeto Indústria — API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "RF01 — Cadastrar Produto",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:3000/produtos", "host": ["localhost"], "port": "3000", "path": ["produtos"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Parafuso M8\",\n  \"descricao\": \"Parafuso sextavado M8x30mm\",\n  \"quantidade\": 500,\n  \"preco\": 0.75\n}"
+        }
+      }
+    },
+    {
+      "name": "RF02 — Listar Todos os Produtos",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:3000/produtos", "host": ["localhost"], "port": "3000", "path": ["produtos"] }
+      }
+    },
+    {
+      "name": "RF02 — Buscar Produto por ID",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:3000/produtos/1", "host": ["localhost"], "port": "3000", "path": ["produtos", "1"] }
+      }
+    },
+    {
+      "name": "RF03 — Atualizar Produto",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "url": { "raw": "http://localhost:3000/produtos/1", "host": ["localhost"], "port": "3000", "path": ["produtos", "1"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Parafuso M8 Atualizado\",\n  \"descricao\": \"Parafuso sextavado M8x30mm — aço inox\",\n  \"quantidade\": 350,\n  \"preco\": 1.20\n}"
+        }
+      }
+    },
+    {
+      "name": "RF04 — Excluir Produto",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "http://localhost:3000/produtos/1", "host": ["localhost"], "port": "3000", "path": ["produtos", "1"] }
+      }
+    }
+  ]
+}
